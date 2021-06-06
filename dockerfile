@@ -1,5 +1,7 @@
-FROM openjdk:8
+FROM ubuntu:18.04
 EXPOSE 9090
-ADD target/docker-jenkins-integration-sample.jar docker-jenkins-integration-sample.jar
-ENTRYPOINT ["java","-jar","/docker-jenkins-integration-sample.jar"]
+RUN echo "Running Dockerfile"
+RUN apt-get update
+
+RUN apt-get install -y curl nginx
 
